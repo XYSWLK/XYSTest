@@ -198,5 +198,10 @@ namespace ZhTest
                 to.AddPage(from.Pages[i]);
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
