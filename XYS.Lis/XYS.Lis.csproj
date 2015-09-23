@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19F67C44-C893-4536-8BA7-ABD741B4EFB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XYS.Lis</RootNamespace>
+    <AssemblyName>XYS.Lis</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastReport, Version=2013.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>I:\XYSTest\ZhTest\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DAL\GSCommonItemDAL.cs" />
+    <Compile Include="DAL\GSReportItemDAL.cs" />
+    <Compile Include="DAL\ReportFormDAL.cs" />
+    <Compile Include="DAL\ReportItemDAL.cs" />
+    <Compile Include="DAL\RFGraphDataDAL.cs" />
+    <Compile Include="Enum\LisEnum.cs" />
+    <Compile Include="LisReport.cs" />
+    <Compile Include="Model\GSCommonItemModel.cs" />
+    <Compile Include="Model\GSReportItemModel.cs" />
+    <Compile Include="Model\MyMergePdf.cs" />
+    <Compile Include="Model\ReportFormModel.cs" />
+    <Compile Include="Model\ReportItemModel.cs" />
+    <Compile Include="Model\RFGraphDataModel.cs" />
+    <Compile Include="Model\TestItemModel.cs" />
+    <Compile Include="PDFManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportManager.cs" />
+    <Compile Include="Repository\Normal\XmlNormalConfigurator.cs" />
+    <Compile Include="Section\CommonSection.cs" />
+    <Compile Include="Section\Fish.cs" />
+    <Compile Include="Section\XingTai.cs" />
+    <Compile Include="Utility\LisConfig.cs" />
+    <Compile Include="Utility\IMGTools.cs" />
+    <Compile Include="Utility\PUser.cs" />
+    <Compile Include="Utility\XMLTools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XYS.DAL\XYS.DAL.csproj">
+      <Project>{f163d3b1-1fc8-4bea-b5a0-49398f27b90e}</Project>
+      <Name>XYS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XYS.Utility\XYS.Utility.csproj">
+      <Project>{0ed1c5dd-2a67-4069-a1aa-385e14fbd07c}</Project>
+      <Name>XYS.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XYS\XYS.csproj">
+      <Project>{054ac4a6-7dd9-4336-9683-2f38687e08f8}</Project>
+      <Name>XYS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
