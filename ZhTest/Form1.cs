@@ -203,5 +203,14 @@ namespace ZhTest
         {
 
         }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+        private string Znn()
+        {
+            return "test";
+        }
     }
 }
