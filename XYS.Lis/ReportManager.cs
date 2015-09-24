@@ -584,6 +584,9 @@ namespace XYS.Lis
                         lr.OrderNo = 15500;
                     }
                     break;
+                case 10:
+                    lr.OrderNo = 16000;
+                    break;
                 //血常规
                 case 2:
                 case 27:
