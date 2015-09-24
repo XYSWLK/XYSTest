@@ -565,11 +565,11 @@ namespace XYS.Lis
         {
             switch (lr.ReportInfo.SectionNo)
             {
-                    //形态
+                //形态
                 case 39:
                     lr.OrderNo = 12000;
                     break;
-                    //组化
+                //组化
                 case 3:
                     lr.OrderNo = 14000;
                     break;
@@ -577,7 +577,7 @@ namespace XYS.Lis
                     //染色体
                     if (lr.ParItemList.Contains(90009044) || lr.ParItemList.Contains(90009045) || lr.ParItemList.Contains(90009046))
                     {
-                        lr.OrderNo =15000;
+                        lr.OrderNo = 15000;
                     }
                     else
                     {
@@ -593,40 +593,44 @@ namespace XYS.Lis
                 case 23:
                 case 29:
                 case 34:
-                    List<int> ll=GetAU2700List();
+                    List<int> ll = GetAU2700List();
                     if (HasIntersection(lr.ParItemList, ll))
                     {
                         lr.OrderNo = 19500;
                     }
                     else
                     {
-                        SetCommonOrder(lr);
+                        SetSampleTypeOrder(lr);
                     }
                     break;
                 default:
-                    switch (lr.ReportInfo.SampleTypeNo)
-                    {
-                        //尿(尿常规等)
-                        case 108:
-                            lr.OrderNo = 1100000;
-                            break;
-                        //便(便常规等)
-                        case 117:
-                            lr.OrderNo = 1200000;
-                            break;
-                        //脑脊液()---特殊与生化同属于一个序列
-                        case 115:
-                            lr.OrderNo = 1000000;
-                            break;
-                        //胸水
-                        case 4:
-                        case 5:
-                            lr.OrderNo = 1300000;
-                            break;
-                        default:
-                            SetCommonOrder(lr);
-                            break;
-                    }
+                    SetSampleTypeOrder(lr);
+                    break;
+            }
+        }
+        private void SetSampleTypeOrder(LisReport lr)
+        {
+            switch (lr.ReportInfo.SampleTypeNo)
+            {
+                //尿(尿常规等)
+                case 108:
+                    lr.OrderNo = 1100000;
+                    break;
+                //便(便常规等)
+                case 117:
+                    lr.OrderNo = 1200000;
+                    break;
+                //脑脊液()---特殊与生化同属于一个序列
+                case 115:
+                    lr.OrderNo = 1000000;
+                    break;
+                //胸水
+                case 4:
+                case 5:
+                    lr.OrderNo = 1300000;
+                    break;
+                default:
+                    SetCommonOrder(lr);
                     break;
             }
         }
