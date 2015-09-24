@@ -32,10 +32,10 @@
   <ItemGroup>
     <Reference Include="FastReport, Version=2013.2.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.dll</HintPath>
+      <HintPath>..\..\..\..\project\XYSTest\ZhTest\bin\Release\FastReport.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>I:\XYSTest\ZhTest\bin\Debug\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\project\XYSTest\ZhTest\bin\Release\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
