@@ -248,10 +248,176 @@ namespace XYS.Lis
                         lr.PrintModelNo = 1200;
                     }
                     break;
-                //分子生物
+                //分子生物临床基因扩增
                 case 6:
+                    #region 死模板
+                    List<int> cexu = new List<int>();
+                    cexu.Add(50006853);
+                    cexu.Add(50006854);
+                    cexu.Add(90004767);
+                    cexu.Add(90004768);
+                    cexu.Add(90004769);
+                    cexu.Add(90004770);
+                    cexu.Add(90004771);
+                    cexu.Add(90008445);
+                    cexu.Add(90008447);
+                    cexu.Add(90008449);
+                    cexu.Add(90008451);
+                    cexu.Add(90008453);
+                    cexu.Add(90008681);
+                    cexu.Add(90008682);
+                    cexu.Add(90008870);
+                    cexu.Add(90008883);
+                    cexu.Add(90008884);
+                    cexu.Add(90008885);
+                    cexu.Add(90008886);
+                    cexu.Add(90008935);
+                    cexu.Add(90008938);
+                    cexu.Add(90008968);
+                    cexu.Add(90008972);
+                    cexu.Add(90008978);
+                    cexu.Add(90008979);
+                    cexu.Add(90008983);
+                    cexu.Add(90008986);
+                    cexu.Add(90008989);
+                    cexu.Add(90009196);
+                    cexu.Add(90009212);
+                    cexu.Add(90009216);
+                    cexu.Add(90009219);
+                    cexu.Add(50006855);
+                    cexu.Add(50006856);
+                    cexu.Add(50006857);
+                    cexu.Add(50006858);
+                    cexu.Add(50006859);
+                    List<int> dingxing = new List<int>();
+                    dingxing.Add(90004721);
+                    dingxing.Add(90004723);
+                    dingxing.Add(90004725);
+                    dingxing.Add(90004727);
+                    dingxing.Add(90004729);
+                    dingxing.Add(90004731);
+                    dingxing.Add(90004733);
+                    dingxing.Add(90004735);
+                    dingxing.Add(90004737);
+                    dingxing.Add(90004739);
+                    dingxing.Add(90004741);
+                    dingxing.Add(90004743);
+                    dingxing.Add(90004745);
+                    dingxing.Add(90004747);
+                    dingxing.Add(90004749);
+                    dingxing.Add(90004751);
+                    dingxing.Add(90004753);
+                    dingxing.Add(90008439);
+                    dingxing.Add(90008754);
+                    dingxing.Add(90008876);
+                    dingxing.Add(90008881);
+                    dingxing.Add(90008882);
+                    dingxing.Add(90008887);
+                    dingxing.Add(90009304);
+                    List<int> dingliang = new List<int>();
+                    dingliang.Add(90004758);
+                    dingliang.Add(90004760);
+                    dingliang.Add(90004761);
+                    dingliang.Add(90004762);
+                    dingliang.Add(90004763);
+                    dingliang.Add(90004764);
+                    dingliang.Add(90004765);
+                    dingliang.Add(90004766);
+                    dingliang.Add(90008993);
+                    dingliang.Add(90009005);
+                    dingliang.Add(90009009);
+                    List<int> bingdu = new List<int>();
+                    bingdu.Add(90008441);
+                    bingdu.Add(90008442);
+                    bingdu.Add(90008897);
+                    bingdu.Add(90008900);
+                    List<int> sishi = new List<int>();
+                    sishi.Add(90008959);
+                    sishi.Add(90009106);
+                    sishi.Add(90009109);
+                    sishi.Add(90009112);
+                    sishi.Add(90009115);
+                    sishi.Add(90009118);
+                    sishi.Add(90009121);
+                    sishi.Add(90009124);
+                    sishi.Add(90009127);
+                    sishi.Add(90009130);
+                    sishi.Add(90009133);
+                    sishi.Add(90009136);
+                    sishi.Add(90009139);
+                    sishi.Add(90009142);
+                    sishi.Add(90009145);
+                    sishi.Add(90009148);
+                    sishi.Add(90009151);
+                    sishi.Add(90009154);
+                    sishi.Add(90009157);
+                    sishi.Add(90009160);
+                    sishi.Add(90009163);
+                    sishi.Add(90009166);
+                    sishi.Add(90009169);
+                    sishi.Add(90009172);
+                    sishi.Add(90009175);
+                    sishi.Add(90009178);
+                    sishi.Add(90009181);
+                    sishi.Add(90009184);
+                    sishi.Add(90009187);
+                    sishi.Add(90009190);
+                    sishi.Add(90009193);
+                    sishi.Add(90009225);
+                    sishi.Add(90009285);
+                    List<int> EVI1 = new List<int>();
+                    EVI1.Add(90009208);
+                    #endregion
+
+                    if (myfenzishengwuliushi(lr.ParItemList, sishi))
+                    {
+                        lr.PrintModelNo = Convert.ToInt32(Lis.Enum.ReportType.Rt分子生物_临床基因扩增_四十种报告);
+                        break;
+                    }
+                    if (myfenzishengwuliushi(lr.ParItemList, EVI1))
+                    {
+                        lr.PrintModelNo = Convert.ToInt32(Lis.Enum.ReportType.Rt分子生物_临床基因扩增_EVI1报告);
+                        lr.ReportInfo.Remark = @"1.提取送检标本中有核细胞总RNA并反转录为cDNA。
+2.应用TaqMan探针法定量检测送检标本目的基因和PBGD内参基因的表达量。
+3.定量检测结果用目的基因和内参基因相对定量法表示。";
+                        break;
+                    }
+                    if (myfenzishengwuliushi(lr.ParItemList, bingdu))
+                    {
+                        lr.PrintModelNo = Convert.ToInt32(Lis.Enum.ReportType.Rt分子生物_临床基因扩增_病毒报告);
+                        lr.ReportInfo.Remark = @"1.提取送检血清或血浆中的DNA或RNA。
+2.使用AB7500型荧光定量PCR仪检测标本中的病毒表达量。";
+                        break;
+                    }
+                    if (myfenzishengwuliushi(lr.ParItemList, dingliang))
+                    {
+                        lr.PrintModelNo = Convert.ToInt32(Lis.Enum.ReportType.Rt分子生物_临床基因扩增_定量报告);
+                        lr.ReportInfo.Remark = @"1.提取送检标本中有核细胞总RNA并反转录为cDNA。
+2.使用AB7500型荧光定量PCR仪和TaqMan探针法定量检测送检标本中目的基因和内参基因ABL的表达量。
+3.定量检测结果用目的基因和内参基因拷贝数的比值（百分比）表示。
+4.本项目对目的基因和内参基因ABL的检测灵敏度为5拷贝/反应体系。
+5.ABL拷贝数大于10E+04为合格。
+6.本实验室通过CML分子检测参比实验室的验证，获得有效的BCR/ABLP210（IS）转换系数CF值=0.9；
+国际标准BCR/ABLP210水平=本实验室检测结果*CF";
+                        break;
+                    }
+                    if (myfenzishengwuliushi(lr.ParItemList, dingxing))
+                    {
+                        lr.PrintModelNo = Convert.ToInt32(Lis.Enum.ReportType.Rt分子生物_临床基因扩增_定性报告);
+                        lr.ReportInfo.Remark = @"1.提取送检标本中有核细胞的总RNA或DNA，总RNA反转录为cDNA。
+2.用PCR仪检测送检标本中的白血病相关基因，2%琼脂糖凝胶电泳检测扩增产物。
+3.采用多重PCR和基因片段分析法检测克隆性基因重排项目（TCRβ、TCRγ、IGH、IGK）。";
+                        break;
+                    }
+                    if (myfenzishengwuliushi(lr.ParItemList, cexu))
+                    {
+                        lr.PrintModelNo = Convert.ToInt32(Lis.Enum.ReportType.Rt分子生物_临床基因扩增_测序报告);
+                        lr.ReportInfo.Remark = @"1.提取送检标本中基因组DNA/总RNA（总RNA反转录为cDNA），使用PCR仪进行基因扩增并电泳检测扩增产物，然后扩增产物直接测序。
+2.使用AB、BigDye、V3.1试剂盒和AB、3730XL或3130XL型测序仪进行基因序列测定。
+3.本测序方法对该项目的检测检出限为10%。";
+                    }
                     break;
-                //组织配型
+                //分子生物组织配型
                 case 45:
                     break;
                 //细胞化学
